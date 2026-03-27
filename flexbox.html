@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Görsel Tasarım</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="flexbox.css">
+</head>
+<body>
+    <div class="container">
+        
+        <!-- Panel 1: Navbar / LOGO -->
+        <div class="panel">
+            <div class="panel-body flex-row justify-between align-center">
+                <div class="logo">LOGO</div>
+                <nav class="nav-links">
+                    <a href="#">Ana Sayfa</a>
+                    <a href="#">Hakkında</a>
+                    <a href="#">Dersler</a>
+                    <a href="#">İletişim</a>
+                </nav>
+            </div>
+            <div class="panel-footer border-top">
+                <span class="tag">flex layout</span>
+                <span class="tag">justify-content</span>
+                <span class="tag">flex layout</span>
+                <span class="tag">10vh height</span>
+                <span class="tag">100w height</span>
+                <span class="tag">100ww width</span>
+            </div>
+        </div>
+
+        <!-- Panel 2: Hero Başlık -->
+        <div class="panel">
+            <div class="panel-body hero-body">
+                <div class="hero-content">
+                    <h2>Hero Başlık</h2>
+                    <p>Açıklama metni</p>
+                    <div class="skeleton-line long"></div>
+                    <div class="skeleton-line medium"></div>
+                    <button class="btn-blue" style="margin-top: 15px;">Buton</button>
+                </div>
+                <div class="hero-image">
+                    <svg viewBox="0 0 100 100" fill="#cbd5e1" width="120" height="120">
+                        <circle cx="70" cy="30" r="12" />
+                        <polygon points="10,90 40,50 60,75 75,60 95,90" />
+                    </svg>
+                </div>
+            </div>
+            <div class="panel-footer border-top">
+                <span class="tag">flex-direction: row: row</span>
+                <span class="tag">height: 30vh</span>
+                <span class="tag">align-items: stretch</span>
+            </div>
+        </div>
+
+        <!-- Panel 3: Kartlar Bölümü -->
+        <div class="panel">
+            <div class="panel-header border-bottom">
+                <h2>Kartlar Bölümü</h2>
+                <div class="header-tags">
+                    <span class="tag">multiple items</span>
+                    <span class="tag">flex layout - wrap</span>
+                </div>
+            </div>
+            <div class="panel-body cards-body">
+                <div class="card">
+                    <h4>Kart Başlığı</h4>
+                    <p>Kisa aciklama</p>
+                    <div class="skeleton-line light"></div>
+                    <div class="skeleton-line light short"></div>
+                    <button class="btn-blue">Buton</button>
+                </div>
+                <div class="card">
+                    <h4>Kart Başlığı</h4>
+                    <p>Kisa aciklama</p>
+                    <div class="skeleton-line light"></div>
+                    <div class="skeleton-line light short"></div>
+                    <button class="btn-blue">Buton</button>
+                </div>
+                <div class="card">
+                    <h4>Kart Başlığı</h4>
+                    <p>Kisa aciklama</p>
+                    <div class="skeleton-line light"></div>
+                    <div class="skeleton-line light short"></div>
+                    <button class="btn-blue">Buton</button>
+                </div>
+                <!-- Resimde 4 adet kart gözükmektedir -->
+                <div class="card">
+                    <h4>Kart Başlığı</h4>
+                    <p>Kisa aciklama</p>
+                    <div class="skeleton-line light"></div>
+                    <div class="skeleton-line light short"></div>
+                    <button class="btn-blue">Buton</button>
+                </div>
+            </div>
+            <div class="panel-footer border-top">
+                <span class="tag">flex-direction</span>
+                <span class="tag">flex layout + wrap</span>
+                <span class="tag">gap + align/hizalama</span>
+                <span class="tag">height: iğ: 30vh</span>
+            </div>
+        </div>
+
+        <!-- Panel 4: Flex Grow Uygulama -->
+        <div class="panel">
+            <div class="panel-header border-bottom">
+                <h2>Flex Grow Uygulama</h2>
+                <div class="header-tags">
+                    <span class="tag">flex-grow:</span>
+                    <span class="tag">height: 20vh</span>
+                    <span class="tag">stretch (esneme)</span>
+                </div>
+            </div>
+            <div class="panel-body grow-body">
+                <div class="grow-box box-1">
+                    <h3>1 Kutu</h3>
+                    <p>flex-grow: 1;</p>
+                    <button class="btn-blue">Buton</button>
+                </div>
+                <div class="grow-box box-2">
+                    <h3>2 Kutu</h3>
+                    <p>flex-grow: 2;</p>
+                    <button class="btn-green">Buton</button>
+                </div>
+                <div class="grow-box box-3">
+                    <h3>3 Kutu</h3>
+                    <p>flex-grow: 1;</p>
+                    <button class="btn-orange">Buton</button>
+                </div>
+            </div>
+            <div class="panel-footer border-top">
+                <span class="tag">multiple items</span>
+                <span class="tag">flex layout + wrap</span>
+                <span class="tag">gap + align/hizalama</span>
+            </div>
+        </div>
+
+        <!-- Panel 4.5: Flex Grow Uygulama (Butonsuz) -->
+        <div class="panel">
+            <div class="panel-header border-bottom">
+                <h2>Flex Grow Uygulama</h2>
+                <div class="header-tags">
+                    <span class="tag">flex-grow:</span>
+                    <span class="tag">height: 20vh</span>
+                    <span class="tag">stretch (esneme)</span>
+                </div>
+            </div>
+            <div class="panel-body grow-body">
+                <div class="grow-box box-1">
+                    <h3>1 Kutu</h3>
+                    <p>flex-grow: 1;</p>
+                </div>
+                <div class="grow-box box-2">
+                    <h3>2 Kutu</h3>
+                    <p>flex-grow: 2;</p>
+                </div>
+                <div class="grow-box box-3">
+                    <h3>3 Kutu</h3>
+                    <p>flex-grow: 1;</p>
+                </div>
+            </div>
+            <div class="panel-footer border-top">
+                <span class="tag">flex-grow</span>
+                <span class="tag">height: 20vh</span>
+                <span class="tag">stretch (esneme)</span>
+            </div>
+        </div>
+
+        <!-- Panel 5: Simple Footer -->
+        <div class="panel simple-footer">
+            © 2026 - Temel Flexbox Örneği
+        </div>
+
+    </div>
+</body>
+</html>

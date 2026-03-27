@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #f1f3f6;
+    color: #334155;
+    padding: 30px 20px;
+}
+
+.container {
+    max-width: 950px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Paneller arası boşluk */
+}
+
+/* Genel Panel Stilleri */
+.panel {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.panel-header {
+    background-color: #f8fafc;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.panel-header h2 {
+    font-size: 1.25rem;
+    color: #334155;
+    font-weight: 700;
+}
+
+.header-tags {
+    display: flex;
+    gap: 8px;
+}
+
+.panel-body {
+    padding: 24px;
+}
+
+.panel-footer {
+    background-color: #f8fafc;
+    padding: 14px 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.border-top {
+    border-top: 1px solid #e2e8f0;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* Tag (Etiket) Stilleri */
+.tag {
+    background-color: #e2e8f0;
+    color: #64748b;
+    padding: 4px 16px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+/* Basit İskelet (Skeleton) Yükleyicileri */
+.skeleton-line {
+    background-color: #e2e8f0;
+    height: 10px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+}
+
+.skeleton-line.light {
+    background-color: #e2e8f0;
+}
+
+.skeleton-line.long { width: 60%; }
+.skeleton-line.medium { width: 40%; }
+.skeleton-line.short { width: 30%; margin-bottom: 15px; } /* Kartlar için */
+
+/* Ortak Butonlar */
+.btn-blue { background-color: #8fafee; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-weight: 500; cursor: pointer; transition: 0.2s; font-size: 0.9rem; }
+.btn-green { background-color: #8bbd83; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-weight: 500; cursor: pointer; transition: 0.2s; font-size: 0.9rem; }
+.btn-orange { background-color: #eeb085; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-weight: 500; cursor: pointer; transition: 0.2s; font-size: 0.9rem; }
+
+.btn-blue:hover { background-color: #7b9fe0; }
+.btn-green:hover { background-color: #7ab072; }
+.btn-orange:hover { background-color: #dda175; }
+
+/* Panel 1: Navbar */
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+.justify-between { align-items: center; justify-content: space-between; }
+.align-center { align-items: center; }
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #64748b;
+    letter-spacing: 0.5px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+.nav-links a {
+    text-decoration: none;
+    color: #64748b;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* Panel 2: Hero */
+.hero-body {
+    display: flex;
+    gap: 30px;
+    height: 280px;
+    align-items: stretch; /* Esnemesini sağlamak için */
+}
+.hero-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 15px;
+}
+.hero-content h2 { font-size: 1.6rem; color: #334155; }
+.hero-content p { color: #64748b; font-size: 0.95rem; }
+
+.hero-image {
+    flex: 1;
+    background-color: #e2e8f0;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Panel 3: Kartlar */
+.cards-body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.card {
+    flex: 1;
+    min-width: 170px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background-color: #fafbfc;
+}
+.card h4 { color: #334155; font-size: 1.05rem; margin-bottom: 2px; }
+.card p { color: #94a3b8; font-size: 0.85rem; margin-bottom: 10px; }
+.card .btn-blue { margin-top: auto; align-self: center; width: 100%; text-align: center; } /* Butonlar alta yapışsın */
+
+/* Panel 4: Flex Grow */
+.grow-body {
+    display: flex;
+    gap: 16px;
+    height: 180px;
+    align-items: stretch;
+}
+.grow-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border-radius: 8px;
+    padding: 25px;
+    gap: 8px;
+    border: 1px solid transparent;
+}
+.grow-box h3 { font-size: 1.15rem; font-weight: 600; }
+.grow-box p { font-size: 0.9rem; margin-bottom: 8px; }
+
+.box-1 {
+    flex-grow: 1;
+    background-color: #dfedfa;
+    border-color: #cbdcf0;
+}
+.box-1 h3, .box-1 p { color: #39506e; }
+
+.box-2 {
+    flex-grow: 2;
+    background-color: #daf0da;
+    border-color: #c4dec4;
+}
+.box-2 h3, .box-2 p { color: #4b664b; }
+
+.box-3 {
+    flex-grow: 1;
+    background-color: #fcecdb;
+    border-color: #ead4bf;
+}
+.box-3 h3, .box-3 p { color: #7f644b; }
+
+/* Panel 5: Footer */
+.simple-footer {
+    background-color: #e5e9f0;
+    border: 1px solid #cbd5e1;
+    text-align: center;
+    padding: 16px;
+    color: #64748b;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* Responsive Düzenlemeler */
+@media (max-width: 768px) {
+    .hero-body {
+        flex-direction: column;
+        height: auto;
+    }
+    .hero-image {
+        min-height: 200px;
+    }
+    .grow-body {
+        flex-direction: column;
+        height: auto;
+    }
+}
