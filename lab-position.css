@@ -37,7 +37,6 @@ body {
     background-color: #2563eb;
     animation: bounce 0.4s ease-in-out infinite alternate;
     cursor: zoom-in; /* İmleç büyüteç olacak şekilde değişir */
-
 }
 
 .home-btn:active {
@@ -108,8 +107,6 @@ body {
     transition: transform 0.3s ease; /* Büyüme animasyonu için geçiş (transition) */
 }
 
-
-
 /* Etkileşim 3: Diğer butonlar üzerine gelince büyüme animasyonu ekleyelim */
 .interactive-badge:hover {
     transform: scale(1.1);
@@ -146,9 +143,12 @@ body {
     right: 30px;
     background-color: #fce7f3; /* Açık pembe */
     color: #9d174d;
-    cursor: pointer;
     /* Etkileşim 4: Hover olmadan sürekli devam eden aşağı yukarı animasyonu */
     animation: floatUpDown 2s ease-in-out infinite; 
+}
+
+.badge-last:hover {
+    cursor: zoom-in; /* İmleç büyüteç olacak şekilde değişir */
 }
 
 /* Sürekli animasyon (keyframes) */
@@ -168,7 +168,6 @@ body {
     padding: 16px 32px;
     border-radius: 30px;
     font-weight: bold;
-    cursor: pointer;
     box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);
     transition: all 0.3s ease; /* Renk ve boyut değişimi için transition */
     z-index: 100;
@@ -178,7 +177,7 @@ body {
 .helper-menu:hover {
     background-color: #6d28d9; /* Daha koyu mor */
     transform: scale(1.15);
-    cursor: zoom-in; /* İmleç büyüteç olacak şekilde değişir *
+    cursor: zoom-in; /* İmleç büyüteç olacak şekilde değişir */
 }
 
 /* Kart altı standart text */
