@@ -21,16 +21,17 @@ body {
     position: fixed;
     top: 30px;
     left: 30px;
-    background-color: #3b82f6; /* Görseldeki mavi */
+    background-color: #3b82f6;
+    /* Görseldeki mavi */
     color: white;
     padding: 12px 24px;
     text-decoration: none;
     border-radius: 8px;
     font-weight: bold;
-    /* Özel İmge ile Cursor Değişimi (Roket) */
-    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' style='font-size:24px'><text y='24'>🚀</text></svg>"), pointer;
+    cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s, transform 0.2s; /* Temel geçiş (Transition) kuralı */
+    transition: background-color 0.3s, transform 0.2s;
+    /* Temel geçiş (Transition) kuralı */
     z-index: 100;
 }
 
@@ -41,17 +42,24 @@ body {
 }
 
 .home-btn:active {
-    transform: scale(0.95); /* Etkileşim 2: Active efekti (tıklanınca küçülme) */
+    transform: scale(0.95);
+    /* Etkileşim 2: Active efekti (tıklanınca küçülme) */
 }
 
 @keyframes bounce {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-5px); }
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-5px);
+    }
 }
 
 /* --- KART YAPISI (Relative Kapsayıcı) --- */
 .card-container {
-    position: relative; /* ZORUNLU KURAL: Kapsayıcı relative olmalı */
+    position: relative;
+    /* ZORUNLU KURAL: Kapsayıcı relative olmalı */
     /* Görseldeki gibi açık mor-mavi gradyan */
     background: linear-gradient(135deg, #e0e7ff 0%, #f3e8ff 50%, #fce7f3 100%);
     width: 650px;
@@ -72,13 +80,15 @@ body {
     top: 50%;
     right: -20px;
     transform: translateY(-50%);
-    z-index: 1; /* KURAL: Z-index kullanımı (Yazıların altında kalması için) */
+    z-index: 1;
+    /* KURAL: Z-index kullanımı (Yazıların altında kalması için) */
 }
 
 /* Kart metin içeriği */
 .card-content {
     position: relative;
-    z-index: 2; /* Metinlerin çemberin üstünde kalması için z-index */
+    z-index: 2;
+    /* Metinlerin çemberin üstünde kalması için z-index */
     max-width: 90%;
 }
 
@@ -105,13 +115,13 @@ body {
     font-weight: bold;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     z-index: 3;
-    transition: transform 0.3s ease; /* Büyüme animasyonu için geçiş (transition) */
+    transition: transform 0.3s ease;
+    /* Büyüme animasyonu için geçiş (transition) */
 }
 
 /* Rozetler üzerinde hover (cursor pointer) ve büyüme */
 .interactive-badge {
-    /* Özel İmge ile Cursor Değişimi (Roket) */
-    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' style='font-size:24px'><text y='24'>🚀</text></svg>"), pointer;
+    cursor: pointer;
 }
 
 /* Etkileşim 3: Diğer butonlar üzerine gelince büyüme animasyonu ekleyelim */
@@ -122,14 +132,16 @@ body {
 .badge-free {
     top: 30px;
     left: 30px;
-    background-color: #fef08a; /* Açık sarı */
+    background-color: #fef08a;
+    /* Açık sarı */
     color: #854d0e;
 }
 
 .badge-date {
     top: 30px;
     right: 30px;
-    background-color: #dcfce7; /* Açık yeşil */
+    background-color: #dcfce7;
+    /* Açık yeşil */
     color: #166534;
 }
 
@@ -140,26 +152,34 @@ body {
     color: #334155;
     padding: 12px 24px;
     border-radius: 12px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
 }
 
 /* "Son Kayıt" Rozeti (Sürekli Animasyon) */
 .badge-last {
     bottom: 30px;
     right: 30px;
-    background-color: #fce7f3; /* Açık pembe */
+    background-color: #fce7f3;
+    /* Açık pembe */
     color: #9d174d;
-    /* Özel İmge ile Cursor Değişimi (Roket) */
-    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' style='font-size:24px'><text y='24'>🚀</text></svg>"), pointer;
+    cursor: pointer;
     /* Etkileşim 4: Hover olmadan sürekli devam eden aşağı yukarı animasyonu */
-    animation: floatUpDown 2s ease-in-out infinite; 
+    animation: floatUpDown 2s ease-in-out infinite;
 }
 
 /* Sürekli animasyon (keyframes) */
 @keyframes floatUpDown {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
 
 /* --- YARDIMCI MENÜ (Fixed) --- */
@@ -167,21 +187,23 @@ body {
     position: fixed;
     bottom: 40px;
     right: 40px;
-    background-color: #8b5cf6; /* Mor */
+    background-color: #8b5cf6;
+    /* Mor */
     color: white;
     padding: 16px 32px;
     border-radius: 30px;
     font-weight: bold;
-    /* Özel İmge ile Cursor Değişimi (Roket) */
-    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' style='font-size:24px'><text y='24'>🚀</text></svg>"), pointer;
+    cursor: pointer;
     box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);
-    transition: all 0.3s ease; /* Renk ve boyut değişimi için transition */
+    transition: all 0.3s ease;
+    /* Renk ve boyut değişimi için transition */
     z-index: 100;
 }
 
 /* Etkileşim 5: Yardımcı menü üzerine gelince renk değiştirsin ve büyüsün */
 .helper-menu:hover {
-    background-color: #6d28d9; /* Daha koyu mor */
+    background-color: #6d28d9;
+    /* Daha koyu mor */
     transform: scale(1.15);
 }
 
@@ -198,13 +220,16 @@ body {
         width: 95%;
         padding: 40px 20px;
     }
+
     .badge-location {
         bottom: 80px;
         right: 10px;
     }
+
     .card-title {
         font-size: 24px;
     }
+
     .card-desc {
         font-size: 14px;
     }
