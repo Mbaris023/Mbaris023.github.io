@@ -27,6 +27,8 @@ body {
     text-decoration: none;
     border-radius: 8px;
     font-weight: bold;
+    /* Özel İmge ile Cursor Değişimi (Roket) */
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' style='font-size:24px'><text y='24'>🚀</text></svg>"), pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s, transform 0.2s; /* Temel geçiş (Transition) kuralı */
     z-index: 100;
@@ -36,7 +38,6 @@ body {
 .home-btn:hover {
     background-color: #2563eb;
     animation: bounce 0.4s ease-in-out infinite alternate;
-    cursor: zoom-in; /* İmleç büyüteç olacak şekilde değişir */
 }
 
 .home-btn:active {
@@ -107,10 +108,15 @@ body {
     transition: transform 0.3s ease; /* Büyüme animasyonu için geçiş (transition) */
 }
 
+/* Rozetler üzerinde hover (cursor pointer) ve büyüme */
+.interactive-badge {
+    /* Özel İmge ile Cursor Değişimi (Roket) */
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' style='font-size:24px'><text y='24'>🚀</text></svg>"), pointer;
+}
+
 /* Etkileşim 3: Diğer butonlar üzerine gelince büyüme animasyonu ekleyelim */
 .interactive-badge:hover {
     transform: scale(1.1);
-    cursor: zoom-in; /* İmleç büyüteç olacak şekilde değişir */
 }
 
 .badge-free {
@@ -143,12 +149,10 @@ body {
     right: 30px;
     background-color: #fce7f3; /* Açık pembe */
     color: #9d174d;
+    /* Özel İmge ile Cursor Değişimi (Roket) */
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' style='font-size:24px'><text y='24'>🚀</text></svg>"), pointer;
     /* Etkileşim 4: Hover olmadan sürekli devam eden aşağı yukarı animasyonu */
     animation: floatUpDown 2s ease-in-out infinite; 
-}
-
-.badge-last:hover {
-    cursor: zoom-in; /* İmleç büyüteç olacak şekilde değişir */
 }
 
 /* Sürekli animasyon (keyframes) */
@@ -168,6 +172,8 @@ body {
     padding: 16px 32px;
     border-radius: 30px;
     font-weight: bold;
+    /* Özel İmge ile Cursor Değişimi (Roket) */
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' style='font-size:24px'><text y='24'>🚀</text></svg>"), pointer;
     box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);
     transition: all 0.3s ease; /* Renk ve boyut değişimi için transition */
     z-index: 100;
@@ -177,7 +183,6 @@ body {
 .helper-menu:hover {
     background-color: #6d28d9; /* Daha koyu mor */
     transform: scale(1.15);
-    cursor: zoom-in; /* İmleç büyüteç olacak şekilde değişir */
 }
 
 /* Kart altı standart text */
