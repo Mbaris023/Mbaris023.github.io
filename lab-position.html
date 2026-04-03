@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAB: CSS Position ile Etkileşimli Duyuru Kartı</title>
+    <link rel="stylesheet" href="lab-position.css">
+</head>
+
+<body>
+
+    <!-- NOT: BURADAKİ href KISMINA GITHUB PAGES ANA SAYFANIZIN LINKINI EKLEYİN 
+         Örneğin ana sayfanız index.html ise href="index.html" olarak güncelleyin. -->
+    <a href="#" class="home-btn">Ana Sayfaya Dön</a>
+
+    <div class="card-container">
+        <!-- Z-index ile kartın arka planında kalacak süs çemberi (Position: absolute) -->
+        <div class="circle-bg"></div>
+
+        <!-- Position: absolute olan elementler -->
+        <!-- Ücretsiz, 24 Nisan ve Konum butonlarında üzerine gelince büyüme animasyonu (scale) var -->
+        <div class="badge badge-free interactive-badge">Ücretsiz Giriş</div>
+        <div class="badge badge-date interactive-badge">3 Nisan</div>
+        <div class="badge badge-location interactive-badge">Yer: Yemekhane</div>
+
+        <!-- Sürekli çalışan pulse animasyonu uygulanan absolute element -->
+        <!-- NOT: Son Kayıt için spesifik bir yere yönlendiriyorsa burayı da bir <a> etiketi ile sarabilirsiniz. -->
+        <div class="badge badge-last">Son Kayıt</div>
+
+        <div class="card-content">
+            <h1 class="card-title">Teknoloji Topluluğu Etkinliği</h1>
+            <p class="card-desc">
+                Üniversitemiz teknoloji kulübü tarafından düzenlenen bu zirvede,<br>
+                yapay zeka alanındaki son gelişmeler, otonom sistemler ve <br>
+                geleceğin kariyer fırsatları alanında uzman konuklarla tartışılacaktır.<br>
+                Kontenjan sınırlı olduğu için lütfen kaydınızı tamamlayın.
+            </p>
+        </div>
+    </div>
+
+    <!-- Alt bilgi alanı -->
+    <div class="footer-text">
+        2026 - LAB Position Örnek Çalışması
+    </div>
+
+    <!-- Sayfada kaydırma (scroll) olsa da sabit kalacak alan (Position: fixed) -->
+    <!-- NOT: Yardımcı menünün tıklanabilir olmasını isterseniz içine link ekleyebilirsiniz. -->
+    <div class="helper-menu">Yardımcı Menü</div>
+
+</body>
+
+</html>
