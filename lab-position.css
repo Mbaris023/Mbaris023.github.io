@@ -1,0 +1,246 @@
+/* Genel Sıfırlama */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f5f7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+/* --- ANA SAYFA BUTONU (Fixed) --- */
+.home-btn {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    background-color: #3b82f6;
+    /* Görseldeki mavi */
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+    /* Temel geçiş (Transition) kuralı */
+    z-index: 100;
+}
+
+/* Etkileşim 1: Ana sayfa butonuna özel hover animasyonu */
+.home-btn:hover {
+    background-color: #2563eb;
+    animation: bounce 0.4s ease-in-out infinite alternate;
+}
+
+.home-btn:active {
+    transform: scale(0.95);
+    /* Etkileşim 2: Active efekti (tıklanınca küçülme) */
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-5px);
+    }
+}
+
+/* --- KART YAPISI (Relative Kapsayıcı) --- */
+.card-container {
+    position: relative;
+    /* ZORUNLU KURAL: Kapsayıcı relative olmalı */
+    /* Görseldeki gibi açık mor-mavi gradyan */
+    background: linear-gradient(135deg, #e0e7ff 0%, #f3e8ff 50%, #fce7f3 100%);
+    width: 650px;
+    max-width: 90%;
+    padding: 60px 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    margin-bottom: 40px;
+}
+
+/* Kart içi süs çemberi (Z-index ve Absolute) */
+.circle-bg {
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    top: 50%;
+    right: -20px;
+    transform: translateY(-50%);
+    z-index: 1;
+    /* KURAL: Z-index kullanımı (Yazıların altında kalması için) */
+}
+
+/* Kart metin içeriği */
+.card-content {
+    position: relative;
+    z-index: 2;
+    /* Metinlerin çemberin üstünde kalması için z-index */
+    max-width: 90%;
+}
+
+.card-title {
+    font-size: 30px;
+    color: #1e293b;
+    margin-bottom: 25px;
+    font-weight: 800;
+}
+
+.card-desc {
+    color: #334155;
+    font-size: 16px;
+    line-height: 2.2;
+    font-weight: 500;
+}
+
+/* --- KART İÇİ ABSOLUTE ÖĞELER (Rozetler) --- */
+.badge {
+    position: absolute;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    z-index: 3;
+    transition: transform 0.3s ease;
+    /* Büyüme animasyonu için geçiş (transition) */
+}
+
+/* Rozetler üzerinde hover (cursor pointer) ve büyüme */
+.interactive-badge {
+    cursor: pointer;
+}
+
+/* Etkileşim 3: Diğer butonlar üzerine gelince büyüme animasyonu ekleyelim */
+.interactive-badge:hover {
+    transform: scale(1.1);
+}
+
+.badge-free {
+    top: 30px;
+    left: 30px;
+    background-color: #fef08a;
+    /* Açık sarı */
+    color: #854d0e;
+}
+
+.badge-date {
+    top: 30px;
+    right: 30px;
+    background-color: #dcfce7;
+    /* Açık yeşil */
+    color: #166534;
+}
+
+.badge-location {
+    bottom: 90px;
+    right: -10px;
+    background-color: white;
+    color: #334155;
+    padding: 12px 24px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* "Son Kayıt" Rozeti (Sürekli Animasyon) */
+.badge-last {
+    bottom: 30px;
+    right: 30px;
+    background-color: #fce7f3;
+    /* Açık pembe */
+    color: #9d174d;
+    cursor: pointer;
+    /* Etkileşim 4: Hover olmadan sürekli devam eden aşağı yukarı animasyonu */
+    animation: floatUpDown 2s ease-in-out infinite;
+}
+
+/* Sürekli animasyon (keyframes) */
+@keyframes floatUpDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* --- YARDIMCI MENÜ (Fixed) --- */
+.helper-menu {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background-color: #8b5cf6;
+    /* Mor */
+    color: white;
+    padding: 16px 32px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);
+    transition: all 0.3s ease;
+    /* Renk ve boyut değişimi için transition */
+    z-index: 100;
+}
+
+/* Etkileşim 5: Yardımcı menü üzerine gelince renk değiştirsin ve büyüsün */
+.helper-menu:hover {
+    background-color: #6d28d9;
+    /* Daha koyu mor */
+    transform: scale(1.15);
+}
+
+/* Kart altı standart text */
+.footer-text {
+    font-size: 14px;
+    color: #64748b;
+    margin-top: 10px;
+}
+
+/* --- ÖZEL İMLEÇ (CURSOR) AYARI --- */
+/* Etkileşimli butonların üzerine gelince farklı bir görsel (✨) çıksın */
+.home-btn:hover,
+.interactive-badge:hover,
+.badge-last:hover,
+.helper-menu:hover {
+    /* İsterseniz kendi görselinizi url('resim_adi.png') olarak güncelleyebilirsiniz */
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><text y="20" font-size="20">✨</text></svg>'), pointer;
+}
+
+/* Responsive adjustment for small screens */
+@media (max-width: 768px) {
+    .card-container {
+        width: 95%;
+        padding: 40px 20px;
+    }
+
+    .badge-location {
+        bottom: 80px;
+        right: 10px;
+    }
+
+    .card-title {
+        font-size: 24px;
+    }
+
+    .card-desc {
+        font-size: 14px;
+    }
+}
