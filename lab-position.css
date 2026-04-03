@@ -27,7 +27,6 @@ body {
     text-decoration: none;
     border-radius: 8px;
     font-weight: bold;
-    cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s, transform 0.2s; /* Temel geçiş (Transition) kuralı */
     z-index: 100;
@@ -37,6 +36,8 @@ body {
 .home-btn:hover {
     background-color: #2563eb;
     animation: bounce 0.4s ease-in-out infinite alternate;
+    cursor: zoom-in; /* İmleç büyüteç olacak şekilde değişir */
+
 }
 
 .home-btn:active {
@@ -107,14 +108,12 @@ body {
     transition: transform 0.3s ease; /* Büyüme animasyonu için geçiş (transition) */
 }
 
-/* Rozetler üzerinde hover (cursor pointer) ve büyüme */
-.interactive-badge {
-    cursor: pointer;
-}
+
 
 /* Etkileşim 3: Diğer butonlar üzerine gelince büyüme animasyonu ekleyelim */
 .interactive-badge:hover {
     transform: scale(1.1);
+    cursor: zoom-in; /* İmleç büyüteç olacak şekilde değişir */
 }
 
 .badge-free {
@@ -179,6 +178,7 @@ body {
 .helper-menu:hover {
     background-color: #6d28d9; /* Daha koyu mor */
     transform: scale(1.15);
+    cursor: zoom-in; /* İmleç büyüteç olacak şekilde değişir *
 }
 
 /* Kart altı standart text */
