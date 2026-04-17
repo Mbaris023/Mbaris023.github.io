@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birim Dönüştürücü</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="birim-donusturucu.css">
+    <script>
+        const conversionOptions = {
+            sicaklik: [
+                { value: 'c_to_f', text: 'Celsius → Fahrenheit' },
+                { value: 'c_to_k', text: 'Celsius → Kelvin' },
+                { value: 'f_to_c', text: 'Fahrenheit → Celsius' },
+                { value: 'k_to_c', text: 'Kelvin → Celsius' }
+            ],
+            uzunluk: [
+                { value: 'm_to_km', text: 'Metre → Kilometre' },
+                { value: 'km_to_m', text: 'Kilometre → Metre' },
+                { value: 'km_to_mil', text: 'Kilometre → Mil' },
+                { value: 'mil_to_km', text: 'Mil → Kilometre' }
+            ],
+            agirlik: [
+                { value: 'kg_to_g', text: 'Kilogram → Gram' },
+                { value: 'g_to_kg', text: 'Gram → Kilogram' },
+                { value: 'kg_to_lb', text: 'Kilogram → Libre (lb)' },
+                { value: 'lb_to_kg', text: 'Libre (lb) → Kilogram' }
+            ]
+        };
+
+        let currentCategory = 'sicaklik';
+
+        function setCategory(event, category) {
+            currentCategory = category;
+            
+            // Tab active state update
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            if(event) {
+                event.target.classList.add('active');
+            } else {
+                document.querySelector('.tab').classList.add('active');
+            }
+
+            // Select options update
+            const selectBox = document.getElementById('conversionType');
+            selectBox.innerHTML = '';
+            
+            conversionOptions[category].forEach(opt => {
+                const optionElement = document.createElement('option');
+                optionElement.value = opt.value;
+                optionElement.textContent = opt.text;
+                selectBox.appendChild(optionElement);
+            });
+
+            // Hide old result
+            document.getElementById('result').style.display = 'none';
+            document.getElementById('inputValue').value = '';
+        }
+
+        function donustur() {
+            const inputStr = document.getElementById('inputValue').value;
+            if (inputStr === '') {
+                alert('Lütfen bir değer giriniz.');
+                return;
+            }
+
+            const val = parseFloat(inputStr);
+            const type = document.getElementById('conversionType').value;
+            let resultVal = 0;
+            let unit = '';
+
+            // Sıcaklık
+            if (type === 'c_to_f') { resultVal = (val * 9/5) + 32; unit = '°F'; }
+            if (type === 'c_to_k') { resultVal = val + 273.15; unit = 'K'; }
+            if (type === 'f_to_c') { resultVal = (val - 32) * 5/9; unit = '°C'; }
+            if (type === 'k_to_c') { resultVal = val - 273.15; unit = '°C'; }
+
+            // Uzunluk
+            if (type === 'm_to_km') { resultVal = val / 1000; unit = 'km'; }
+            if (type === 'km_to_m') { resultVal = val * 1000; unit = 'm'; }
+            if (type === 'km_to_mil') { resultVal = val * 0.621371; unit = 'mil'; }
+            if (type === 'mil_to_km') { resultVal = val / 0.621371; unit = 'km'; }
+
+            // Ağırlık
+            if (type === 'kg_to_g') { resultVal = val * 1000; unit = 'g'; }
+            if (type === 'g_to_kg') { resultVal = val / 1000; unit = 'kg'; }
+            if (type === 'kg_to_lb') { resultVal = val * 2.20462; unit = 'lb'; }
+            if (type === 'lb_to_kg') { resultVal = val / 2.20462; unit = 'kg'; }
+
+            const resultDiv = document.getElementById('result');
+            
+            // Format number to maximum 4 decimal places without trailing zeros
+            let formattedResult = parseFloat(resultVal.toFixed(4));
+            
+            resultDiv.innerHTML = `Sonuç: <span style="color: white;">${formattedResult} ${unit}</span>`;
+            resultDiv.style.display = 'block';
+
+            // Re-trigger animation
+            resultDiv.style.animation = 'none';
+            resultDiv.offsetHeight; // trigger reflow
+            resultDiv.style.animation = 'fadeIn 0.5s ease';
+        }
+
+        // Initialize selections on load
+        window.onload = () => {
+            setCategory(null, 'sicaklik');
+        };
+    </script>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="home-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Ana Sayfaya Dön
+        </a>
+
+        <h2>Birim Dönüştürücü</h2>
+
+        <div class="category-tabs">
+            <div class="tab active" onclick="setCategory(event, 'sicaklik')">Sıcaklık</div>
+            <div class="tab" onclick="setCategory(event, 'uzunluk')">Uzunluk</div>
+            <div class="tab" onclick="setCategory(event, 'agirlik')">Ağırlık</div>
+        </div>
+        
+        <div class="input-group">
+            <label for="inputValue">Değer Giriniz</label>
+            <input type="number" id="inputValue" step="any" placeholder="0">
+        </div>
+
+        <div class="input-group">
+            <label for="conversionType">Dönüşüm Tipi</label>
+            <select id="conversionType">
+                <!-- Selections will be populated by JS -->
+            </select>
+        </div>
+
+        <button onclick="donustur()">Hesapla</button>
+
+        <div id="result"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Öğrenci Not Hesaplama</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="not-hesaplama.css">
+    <script>
+        function hesapla() {
+            const adSoyad = document.getElementById('adSoyad').value.trim();
+            const vizeStr = document.getElementById('vize').value;
+            const finalStr = document.getElementById('final').value;
+
+            if (!adSoyad || vizeStr === '' || finalStr === '') {
+                alert('Lütfen tüm alanları doldurunuz.');
+                return;
+            }
+
+            const vize = parseFloat(vizeStr);
+            const final = parseFloat(finalStr);
+
+            if (vize < 0 || vize > 100 || final < 0 || final > 100) {
+                alert('Notlar 0 ile 100 arasında olmalıdır.');
+                return;
+            }
+
+            const ortalama = (vize * 0.4) + (final * 0.6);
+            
+            let harfNotu = '';
+            if (ortalama >= 90) harfNotu = 'AA';
+            else if (ortalama >= 85) harfNotu = 'BA';
+            else if (ortalama >= 80) harfNotu = 'BB';
+            else if (ortalama >= 75) harfNotu = 'CB';
+            else if (ortalama >= 70) harfNotu = 'CC';
+            else if (ortalama >= 65) harfNotu = 'DC';
+            else if (ortalama >= 60) harfNotu = 'DD';
+            else if (ortalama >= 50) harfNotu = 'FD';
+            else harfNotu = 'FF';
+
+            const gecti = ortalama >= 50;
+
+            document.getElementById('res-isim').textContent = adSoyad;
+            document.getElementById('res-ortalama').textContent = ortalama.toFixed(2);
+            document.getElementById('res-harf').textContent = harfNotu;
+            
+            const durumEl = document.getElementById('res-durum');
+            if (gecti) {
+                durumEl.textContent = 'Geçti';
+                durumEl.className = 'status-pass';
+            } else {
+                durumEl.textContent = 'Kaldı';
+                durumEl.className = 'status-fail';
+            }
+
+            const resultDiv = document.getElementById('result');
+            resultDiv.style.display = 'block';
+            
+            // Re-trigger animation
+            resultDiv.style.animation = 'none';
+            resultDiv.offsetHeight; // trigger reflow
+            resultDiv.style.animation = 'fadeIn 0.5s ease';
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="home-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Ana Sayfaya Dön
+        </a>
+
+        <h2>Not Hesaplama</h2>
+        
+        <div class="input-group">
+            <label for="adSoyad">Ad Soyad</label>
+            <input type="text" id="adSoyad" placeholder="Örn: Ahmet Yılmaz">
+        </div>
+
+        <div class="input-group">
+            <label for="vize">Vize Notu (%40)</label>
+            <input type="number" id="vize" min="0" max="100" placeholder="0-100 arası">
+        </div>
+
+        <div class="input-group">
+            <label for="final">Final Notu (%60)</label>
+            <input type="number" id="final" min="0" max="100" placeholder="0-100 arası">
+        </div>
+
+        <button onclick="hesapla()">Hesapla</button>
+
+        <div id="result">
+            <div class="result-item">
+                <span style="color: var(--text-muted)">Öğrenci:</span>
+                <span id="res-isim" style="font-weight: 600;">-</span>
+            </div>
+            <div class="result-item">
+                <span style="color: var(--text-muted)">Ortalama:</span>
+                <span id="res-ortalama">-</span>
+            </div>
+            <div class="result-item">
+                <span style="color: var(--text-muted)">Harf Notu:</span>
+                <span id="res-harf">-</span>
+            </div>
+            <div class="result-item">
+                <span style="color: var(--text-muted)">Durum:</span>
+                <span id="res-durum">-</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
