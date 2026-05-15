@@ -1,52 +1,392 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="tr">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Ana Sayfa </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Murat Barış Akyüz | Portfolyo</title>
+    <meta name="description" content="Murat Barış Akyüz - Web Geliştirici, Bilgisayar Mühendisliği Öğrencisi. Kişisel portfolyo ve lab ödevleri.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
-        <h1>Murat Barış Akyüz</h1>
-    </header>
+    <!-- Animated Background Blobs -->
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
 
-    <nav>
-        <a href="index.html">Ana Sayfa</a> |
-        <a href="about.html">Hakkımda</a> |
-        <a href="interests.html">İlgi Alanlarım</a> |
-        <a href="contact.html">İletişim</a>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="navbar-logo">M. Barış Akyüz</a>
+            <div class="navbar-links" id="navLinks">
+                <a href="#hakkimda">Hakkımda</a>
+                <a href="#ilgi-alanlari">İlgi Alanları</a>
+                <a href="#lab-odevleri">Lab Ödevleri</a>
+                <a href="#iletisim">İletişim</a>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menüyü aç/kapa">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
     </nav>
 
-    <main>
-        <p><strong>Hoş geldiniz!</strong> Bu site, kişisel tanıtım ve mini portfolyo sayfamdır.</p>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="dot"></span>
+                    Portfolyo & Lab Ödevleri
+                </div>
+                <h1>
+                    Merhaba, ben<br>
+                    <span class="gradient-text">Murat Barış Akyüz</span>
+                </h1>
+                <p class="hero-description">
+                    Mühendislik öğrencisiyim; mobil uygulama geliştirme, entegrasyon odaklı yazılım projeleri ve sistem altyapısı konularında aktif çalışıyorum. Flutter, Node.js ve Docker gibi teknolojilerle üretim ortamına yakın deneyim kazandım.
+                </p>
+                <div class="hero-actions">
+                    <a href="#lab-odevleri" class="btn-primary-custom">
+                        Lab Ödevlerini Gör
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                    <a href="#iletisim" class="btn-secondary-custom">
+                        İletişim
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <h2>Hızlı bağlantılar</h2>
-        <ul>
-            <li><a href="#hedef">Sayfa içi anchor örneği (#hedef)</a></li>
-            <li><a href="about.html">Hakkımda</a></li>
-            <li><a href="interests.html">İlgi Alanlarım</a></li>
-            <li><a href="contact.html">İletişim</a></li>
-            <li><a href="css-temel-odevi.html">CSS Temel Ödevi</a></li>
-            <li><a href="flexbox.html">Flexbox Laboratuvar Ödevi</a></li>
-            <li><a href="lab-position.html">İlan</a></li>
-            <li><a href="not-hesaplama.html">Uygulama 1</a></li>
-            <li><a href="birim-donusturucu.html">Uygulama 2</a></li>
-            <li><a href="hafta7.html">HAFTA7</a></li>
+    <!-- Hakkımda Section -->
+    <section id="hakkimda">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-label">Hakkımda</span>
+                <h2 class="section-title">Kısaca Ben</h2>
+                <p class="section-subtitle">Marmara Üniversitesi Bilgisayar Mühendisliği · 3. Sınıf</p>
+            </div>
+            <div class="about-grid fade-in">
+                <div class="about-text">
+                    <p>
+                        Gerçek zamanlı veri akışlarıyla çalışan uygulamalar geliştirip, veriyi işleme ve kayıt süreçlerini tasarlıyorum. Docker ve temel Kubernetes araçlarıyla geliştirme ortamlarını yöneterek üretime yakın kurulum deneyimi kazandım.
+                    </p>
+                    <p>
+                        Trak Otomotiv'de BLE tabanlı veri toplama ve Flutter ile mobil uygulama geliştirme; Tesan İletişim'de web tabanlı barkod okuma sistemi ve Node.js backend entegrasyonu üzerine çalıştım. Ayrıca Teknofest Kızıl Kanat Drone Projesi'nde yazılım ekibinde otonom hareketlenme ve görüntü işleme modüllerine katkı sağlıyorum.
+                    </p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">2</div>
+                        <div class="stat-label">İş Deneyimi</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">C1</div>
+                        <div class="stat-label">Almanca</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Teknoloji</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">3.</div>
+                        <div class="stat-label">Sınıf</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        </ul>
+    <!-- İlgi Alanları Section -->
+    <section id="ilgi-alanlari">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-label">İlgi Alanları & Hobiler</span>
+                <h2 class="section-title">Nelerle İlgileniyorum</h2>
+                <p class="section-subtitle">Teknolojiyi, tasarımı ve yaratıcı projeleri bir araya getiriyorum.</p>
+            </div>
+            <div class="skills-grid fade-in">
+                <div class="skill-card">
+                    <div class="skill-icon">💻</div>
+                    <h3>Teknoloji</h3>
+                    <p>Web geliştirme, yazılım ve güncel teknolojileri takip etmek.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🚀</div>
+                    <h3>Proje Geliştirme</h3>
+                    <p>Fikirlerden gerçek uygulamalara dönüşen projeler üretmek.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🎨</div>
+                    <h3>Tasarım & Sunum</h3>
+                    <p>Görsel tasarım ilkeleri ve etkili sunum teknikleri.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">📚</div>
+                    <h3>Okuma</h3>
+                    <p>Kendimi geliştirmek için teknik ve kişisel gelişim kitapları.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">⚽</div>
+                    <h3>Spor</h3>
+                    <p>Aktif ve sağlıklı bir yaşam tarzı sürdürmek.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🔬</div>
+                    <h3>Yeni Şeyler Denemek</h3>
+                    <p>Farklı alanlarda deneyim kazanmak ve öğrenmek.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <h2 id="hedef">Hedef</h2>
-        <p>“Teknoloji projeleri geliştiriyorum ve öğrenmeye devam ediyorum.”</p>
-    </main>
+    <!-- Lab Ödevleri Section -->
+    <section id="lab-odevleri">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-label">Web Programlama Dersi</span>
+                <h2 class="section-title">Lab Ödevleri</h2>
+                <p class="section-subtitle">Ders kapsamında hazırladığım laboratuvar ödevleri ve uygulamalar.</p>
+            </div>
+            <div class="labs-grid fade-in">
 
-    <footer>
-        <p>© 2026 • Murat Barış Akyüz • Tüm hakları saklıdır.</p>
+                <!-- Lab 1: CSS Temel Ödevi -->
+                <div class="lab-card">
+                    <div class="lab-number">01</div>
+                    <h3>CSS Temel Ödevi</h3>
+                    <p>CSS'in temel özellikleri (display, width, height, margin, padding, border, selector) ile basit bir web sayfası tasarımı.</p>
+                    <div class="lab-tags">
+                        <span class="lab-tag">HTML5</span>
+                        <span class="lab-tag">CSS3</span>
+                    </div>
+                    <a href="css-temel-odevi.html" class="lab-link">
+                        Ödevi İncele
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+
+                <!-- Lab 2: Flexbox -->
+                <div class="lab-card">
+                    <div class="lab-number">02</div>
+                    <h3>Flexbox Laboratuvar Ödevi</h3>
+                    <p>Flexbox layout özellikleri ile görsel tasarım panelleri, kartlar ve flex-grow uygulamaları.</p>
+                    <div class="lab-tags">
+                        <span class="lab-tag">Flexbox</span>
+                        <span class="lab-tag">CSS3</span>
+                    </div>
+                    <a href="flexbox.html" class="lab-link">
+                        Ödevi İncele
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+
+                <!-- Lab 3: CSS Position -->
+                <div class="lab-card">
+                    <div class="lab-number">03</div>
+                    <h3>CSS Position ile Duyuru Kartı</h3>
+                    <p>CSS position (absolute, fixed, relative) kullanarak etkileşimli ve animasyonlu bir duyuru kartı.</p>
+                    <div class="lab-tags">
+                        <span class="lab-tag">Position</span>
+                        <span class="lab-tag">Animation</span>
+                    </div>
+                    <a href="lab-position.html" class="lab-link">
+                        Ödevi İncele
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+
+                <!-- Lab 4: Not Hesaplama -->
+                <div class="lab-card">
+                    <div class="lab-number">04</div>
+                    <h3>Not Hesaplama Uygulaması</h3>
+                    <p>JavaScript ile öğrenci vize-final notlarından ortalama ve harf notu hesaplayan interaktif uygulama.</p>
+                    <div class="lab-tags">
+                        <span class="lab-tag">JavaScript</span>
+                        <span class="lab-tag">DOM</span>
+                    </div>
+                    <a href="not-hesaplama.html" class="lab-link">
+                        Ödevi İncele
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+
+                <!-- Lab 5: Birim Dönüştürücü -->
+                <div class="lab-card">
+                    <div class="lab-number">05</div>
+                    <h3>Birim Dönüştürücü</h3>
+                    <p>Sıcaklık, uzunluk ve ağırlık birimlerini dönüştüren, tab yapılı modern bir JavaScript uygulaması.</p>
+                    <div class="lab-tags">
+                        <span class="lab-tag">JavaScript</span>
+                        <span class="lab-tag">UI/UX</span>
+                    </div>
+                    <a href="birim-donusturucu.html" class="lab-link">
+                        Ödevi İncele
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+
+                <!-- Lab 6: Hafta 7 - Bootstrap -->
+                <div class="lab-card">
+                    <div class="lab-number">06</div>
+                    <h3>Bootstrap Etkinlik Kayıt</h3>
+                    <p>Bootstrap ve JavaScript kullanarak responsive etkinlik kayıt sayfası, tema değiştirme ve form işlemleri.</p>
+                    <div class="lab-tags">
+                        <span class="lab-tag">Bootstrap</span>
+                        <span class="lab-tag">JavaScript</span>
+                    </div>
+                    <a href="hafta7.html" class="lab-link">
+                        Ödevi İncele
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- İletişim Section -->
+    <section id="iletisim">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-label">İletişim</span>
+                <h2 class="section-title">Bana Ulaşın</h2>
+                <p class="section-subtitle">Projeler, iş birlikleri veya sohbet için benimle iletişime geçebilirsiniz.</p>
+            </div>
+            <div class="contact-grid fade-in">
+                <div class="contact-info">
+                    <h3>Hadi konuşalım!</h3>
+                    <p>Web geliştirme, teknoloji projeleri veya herhangi bir konuda benimle iletişime geçmekten çekinmeyin.</p>
+                    <div class="contact-links">
+                        <a href="mailto:mbarisakyuz@gmail.com" class="contact-link-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            </div>
+                            <div>
+                                <strong>E-posta</strong>
+                                <span>mbarisakyuz@gmail.com</span>
+                            </div>
+                        </a>
+                        <a href="https://github.com/Mbaris023" target="_blank" rel="noopener" class="contact-link-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            </div>
+                            <div>
+                                <strong>GitHub</strong>
+                                <span>github.com/Mbaris023</span>
+                            </div>
+                        </a>
+                        <a href="https://www.linkedin.com/in/mbarisakyuz" target="_blank" rel="noopener" class="contact-link-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                            </div>
+                            <div>
+                                <strong>LinkedIn</strong>
+                                <span>linkedin.com/in/mbarisakyuz</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <h4>Bağlantıda kalalım</h4>
+                    <p>Sosyal medya hesaplarımdan beni takip edebilir, projelerimi inceleyebilirsiniz.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/Mbaris023" target="_blank" rel="noopener" class="social-link" title="GitHub">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/mbarisakyuz" target="_blank" rel="noopener" class="social-link" title="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                        <a href="mailto:mbarisakyuz@gmail.com" class="social-link" title="E-posta">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 Murat Barış Akyüz • Tüm hakları saklıdır.</p>
+        </div>
     </footer>
 
-</body>
+    <!-- Script -->
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
 
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu on link click
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Navbar scroll effect
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 50) {
+                navbar.style.padding = '10px 0';
+                navbar.style.background = 'rgba(10, 10, 15, 0.9)';
+            } else {
+                navbar.style.padding = '16px 0';
+                navbar.style.background = 'rgba(10, 10, 15, 0.7)';
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        // Scroll reveal animation
+        const fadeElements = document.querySelectorAll('.fade-in');
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        fadeElements.forEach(el => observer.observe(el));
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
 
 </html>
